@@ -44,8 +44,8 @@ public class PYPController {
 		return this.userService.updateUser(user);
 	}
 	
-	@DeleteMapping("/users/{id}")
-	public ResponseEntity<HttpStatus> deleteCourse(@PathVariable String userId,@PathVariable String mobileNumber){
+	@DeleteMapping("/users/{userId}")
+	public ResponseEntity<HttpStatus> deleteCourse(@PathVariable String userId){
 		try {
 			this.userService.deleteUser(userId);
 		return new ResponseEntity<>(HttpStatus.OK);

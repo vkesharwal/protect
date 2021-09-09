@@ -1,7 +1,12 @@
 package com.pyp.protect.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Users {
 
+	@Id
 	private long id;
 	private String name;
 	private String emailID;
