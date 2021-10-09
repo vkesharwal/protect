@@ -1,5 +1,6 @@
 package com.pyp.protect.controller;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,11 +37,15 @@ public class PYPController {
 	
 	@PostMapping("/users")
 	public Users addUser(@RequestBody Users user) {
+		user.setCreatedDate(new Timestamp(System.currentTimeMillis()));
+		user.setModifiedDate(new Timestamp(System.currentTimeMillis()));
+		user.setStatus("CREATED");
 		return this.userService.addUser(user);
 	}
 	
 	@PutMapping("/users")
 	public Users updateUser(@RequestBody Users user) {
+		user.setModifiedDate(new Timestamp(System.currentTimeMillis()));
 		return this.userService.updateUser(user);
 	}
 	
@@ -53,4 +58,6 @@ public class PYPController {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	 
 }

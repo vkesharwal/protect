@@ -1,5 +1,6 @@
 package com.pyp.protect.services;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
@@ -59,6 +60,7 @@ public class UserServiceImpl implements UserService {
 //				
 //			}
 //		});
+		user.setModifiedDate(new Timestamp(System.currentTimeMillis()));
 		userDao.save(user);
 		return this.getUser(user.getId());
 	}

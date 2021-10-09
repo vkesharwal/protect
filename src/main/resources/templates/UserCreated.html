@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+     <!-- Icons font CSS-->
+    <link th:href="@{/vendor/mdi-font/css/material-design-iconic-font.min.css}" rel="stylesheet" media="all">
+    <link th:href="@{/vendor/font-awesome-4.7/css/font-awesome.min.css}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+
+    <!-- Vendor CSS-->
+    <link th:href="@{/vendor/select2/select2.min.css}" rel="stylesheet" media="all">
+    <link th:href="@{/vendor/datepicker/daterangepicker.css}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+    
+    <script  type="text/javascript" th:src="@{/vendor/jquery/jquery.min.js}"></script>
+    <!-- Vendor JS-->
+    <script type="text/javascript"  th:src="@{/vendor/select2/select2.min.js}"></script>
+    <script type="text/javascript" th:src="@{/vendor/datepicker/moment.min.js}"></script>
+    <script type="text/javascript" th:src="@{/vendor/datepicker/daterangepicker.js}"></script>
+
+    <!-- Main JS-->
+    <script type="text/javascript"  src="@{/js/global.js}"></script>
+</head>
+<body>
+    <p th:text="'My Name is ' + ${name} + '!'" />
+    
+    <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Registration Successful</h2>
+                    <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="POST">
+                        <!-- <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Name" name="name">
+                        </div> -->
+                       <!--  <div class="input-group">
+                            <input class="input--style-3 js-datepicker" type="text" placeholder="Birthdate" name="birthday">
+                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                        </div> -->
+                        <!-- <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="gender">
+                                    <option disabled="disabled" selected="selected">Gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div> -->
+                       <!--  <div class="input-group">
+                            <input class="input--style-3" type="email" placeholder="Email" name="email">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Phone" name="phone">
+                        </div> -->
+                        <div class="p-t-10">
+                            <button class="btn btn--pill btn--green" type="submit">Select Plan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
