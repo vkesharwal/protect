@@ -3,6 +3,7 @@ package com.pyp.protect.services;
 import java.util.List;
 
 import com.pyp.protect.entities.Users;
+import com.pyp.protect.pk.UsersPK;
 
 public interface UserService {
 	
@@ -14,6 +15,8 @@ public interface UserService {
 	
 	public Users updateUser(Users user);
 	
-	public void deleteUser(String id);
+	public Users getUserbyCreds(UsersPK emailMob);
+	
+	//public void deleteUser(String id);
 
 }

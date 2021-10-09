@@ -52,7 +52,7 @@ public class PYPController {
 	@DeleteMapping("/users/{userId}")
 	public ResponseEntity<HttpStatus> deleteCourse(@PathVariable String userId){
 		try {
-			this.userService.deleteUser(userId);
+		//	this.userService.deleteUser(userId);
 		return new ResponseEntity<>(HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

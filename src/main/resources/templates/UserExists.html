@@ -31,10 +31,10 @@
     <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
         <div class="wrapper wrapper--w780">
             <div class="card card-3">
-                <div class="card-heading"></div>
+                <div class="card-heading2"></div>
                 <div class="card-body">
-                    <h2 class="title">Registration Successful</h2>
-                    <form action="#" th:action="@{/UserCreated}" th:object="${plans}" method="POST">
+                    <h3 class="title">Email Id and Mobile Number already in use</h3>
+                    <form action="#" th:action="@{/UserExists}" th:object="${greeting}" method="POST">
                         <!-- <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="Name" name="name">
                         </div> -->
@@ -60,7 +60,7 @@
                             <input class="input--style-3" type="text" placeholder="Phone" name="phone">
                         </div> -->
                         <div class="p-t-10">
-                            <button class="btn btn--pill btn--green" type="submit">Select Plan</button>
+                            <button class="btn btn--pill btn--green" type="submit">Go Back!</button>
                         </div>
                     </form>
                 </div>

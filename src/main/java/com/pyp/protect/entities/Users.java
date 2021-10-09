@@ -1,17 +1,24 @@
 package com.pyp.protect.entities;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+
+import com.pyp.protect.pk.UsersPK;
 
 @Entity
-public class Users {
+@IdClass(UsersPK.class)
+public class Users implements Serializable{
 
-	@Id
+	
 	private long id;
 	private String name;
+	@Id
 	private String emailID;
+	@Id
 	private String mobileNum;
 	private Timestamp createdDate;
 	private Timestamp modifiedDate;

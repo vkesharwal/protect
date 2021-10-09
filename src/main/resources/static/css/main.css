@@ -500,6 +500,16 @@ input {
   display: table-cell;
   width: 50%;
 }
+.card-3 .card-heading1 {
+  background: url("../images/registerUser.png") top left/cover no-repeat;
+  display: table-cell;
+  width: 60%;
+}
+.card-3 .card-heading2 {
+  background: url("../images/error.jfif") top left/cover no-repeat;
+  display: table-cell;
+  width: 50%;
+}
 
 .card-3 .card-body {
   padding: 57px 65px;

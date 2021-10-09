@@ -3,6 +3,7 @@ package com.pyp.protect.services;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.pyp.protect.dao.UsersDao;
 import com.pyp.protect.entities.Users;
+import com.pyp.protect.pk.UsersPK;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -38,7 +40,8 @@ public class UserServiceImpl implements UserService {
 		 * Users c = null; for(Users users:list) { if(users.getId()==userId) { c=users;
 		 * break; } } return c;
 		 */
-		return userDao.findById(userId).get();
+		//return userDao.findById(userId).get();
+		return null;
 	}
 
 	@Override
@@ -65,12 +68,21 @@ public class UserServiceImpl implements UserService {
 		return this.getUser(user.getId());
 	}
 
+	/*
+	 * @Override public void deleteUser(String id) { //list.removeIf(e ->
+	 * e.getId()==Long.parseLong(id) ); //return; Users entity =
+	 * userDao.findById(Long.parseLong(id)).get(); userDao.delete(entity); }
+	 */
+
+	
+
 	@Override
-	public void deleteUser(String id) {
-		//list.removeIf(e -> e.getId()==Long.parseLong(id) );
-		//return;
-		Users entity = userDao.findById(Long.parseLong(id)).get();
-		userDao.delete(entity);
+	public Users getUserbyCreds(UsersPK emailMob) {
+		Optional<Users> opus=userDao.findById(emailMob);
+		if(opus.isPresent()) {
+		return opus.get();
+		}
+		else return null;
 	}
 	
 	
